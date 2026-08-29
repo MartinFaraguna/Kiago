@@ -1,3 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+@import "tailwindcss";
+
+html, body {
+  @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen;
+}
+
+/* Paleta de colores */
+
+@theme {
+  --color-kiago-principal: #5cb85c;
+  --color-kiago-fondo-formularios: #c7e2dd;
+  --color-kiago-dark: #0b1329;
+}
