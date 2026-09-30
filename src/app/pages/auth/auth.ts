@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Header } from '../../components/header/header';
+import { RouterLink } from '@angular/router';
 @Component({
-  imports: [ReactiveFormsModule, Header],
+  imports: [ReactiveFormsModule, Header, RouterLink],
   selector: 'app-auth',
   styleUrl: './auth.css',
   templateUrl: './auth.html',
@@ -19,11 +20,9 @@ export class Auth {
     if (this.form.valid) {
       const email = this.form.get('email')?.value;
       const password = this.form.get('password')?.value;
-      const passwordConfirm = this.form.get('passwordConfirm')?.value;
-      
+
       console.log('Email:', email);
       console.log('Password:', password);
-      console.log('Password Confirm:', passwordConfirm);
     } else {
       console.log('Form is invalid');
     }
