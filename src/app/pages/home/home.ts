@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
+import { Header } from '../../components/header/header';
+
 
 @Component({
-  imports: [],
+  imports: [Header],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
 })
-export class Home {}
+export class Home {
+  protected menuOpen = false;
+
+  protected toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+}

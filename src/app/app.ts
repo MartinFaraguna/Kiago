@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 
 @Component({
@@ -9,17 +9,7 @@ import { initFlowbite } from 'flowbite';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('kiago');
-
-  constructor(private router: Router) {}
-
-  ngOnInit(): void {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        setTimeout(() => {
-          initFlowbite();
-        });
-      }
-    });
+  protected initializeFlowbite(): void {
+    setTimeout(() => initFlowbite());
   }
 }

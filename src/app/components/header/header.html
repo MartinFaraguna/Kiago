@@ -1,10 +1,76 @@
-<header class="bg-kiago-principal px-6 py-4 shadow-md">
-  <!-- justify-center centra todo horizontalmente -->
-  <div class="flex items-center justify-center space-x-4 max-w-7xl mx-auto">
-    <!-- Cambié w-10 h-10 por w-14 h-14 para que sea más grande -->
-    <img src="/images/LogoSinFondo.png" alt="Kiago Logo" class="h-20 object-contain" />
-    
-    <!-- Cambié text-xl por text-3xl para aumentar el tamaño del texto -->
-    <span class="text-white font-extrabold text-3xl tracking-wider">KIAGO</span>
+<nav class="bg-neutral-tertiary fixed w-full z-20 top-0 start-0 border-default">
+  <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+    <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img src="/images/LogoSinFondo.png" class="h-20" alt="Logo Kiago" />
+      <span class="self-center text-xl text-heading font-semibold whitespace-nowrap">Kiago</span>
+    </a>
+
+    <button
+      (click)="toggleMenu()"
+      type="button"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+      aria-controls="navbar-dropdown"
+      [attr.aria-expanded]="menuOpen"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-width="2"
+          d="M5 7h14M5 12h14M5 17h14"
+        />
+      </svg>
+    </button>
+    <div class="hidden w-full md:block md:w-auto" [class.hidden]="!menuOpen" id="navbar-dropdown">
+      <ul
+        class="flex flex-col items-center font-medium p-4 md:p-0 mt-4 border border-default rounded-base md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+      >
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-3 text-kiago-principal hover:text-[#417A41] md:bg-transparent md:p-0"
+            aria-current="page"
+            >Explorar</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-[#417A41] md:p-0 md:dark:hover:bg-transparent"
+            >Favoritos</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-[#417A41] md:p-0 md:dark:hover:bg-transparent"
+            >Sobre nosotros</a
+          >
+        </li>
+        <li>
+          <button
+            type="button"
+            routerLink="/auth"
+            class="flex items-center text-sm bg-neutral-primary rounded-full md:me-0 focus:ring-4 focus:ring-neutral-tertiary gap-2 p-2 hover:bg-kiago-principal cursor-pointer"
+            id="user-menu-button"
+            aria-expanded="false"
+            data-dropdown-toggle="user-dropdown"
+            data-dropdown-placement="bottom"
+          >
+            <img class="w-8 h-8 rounded-full" src="/images/Bombonera.jpg" alt="foto del usuario" />
+            <p>Martin Faraguna</p>
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>
