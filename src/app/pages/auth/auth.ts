@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Header } from '../../components/header/header';
+
 @Component({
-  imports: [ReactiveFormsModule, Header],
+  imports: [ReactiveFormsModule],
   selector: 'app-auth',
   styleUrl: './auth.css',
   templateUrl: './auth.html',
