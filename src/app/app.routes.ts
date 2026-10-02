@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Auth } from './pages/auth/auth';
+import { Perfil } from './pages/perfil/perfil';
 
 export const routes: Routes = [
   {
@@ -10,6 +11,10 @@ export const routes: Routes = [
   {
     path: 'auth',
     component: Auth
+  },
+  {
+    path: 'perfil',
+    component: Perfil
   },
   {
     path: '**',
